@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+
 
 public class Book {
 	private String title;
@@ -79,7 +81,26 @@ public class Book {
 		this.price = price;
 	}
 	
+	/**
+	 * Returns all attributes of the Book object in a readable format
+	 */
+	@Override
+	public String toString() {
+		DecimalFormat df = new DecimalFormat("#0.00");
+		return this.title + " by " + this.author + " (ISBN: " + this.ISBN + ", $" + df.format(this.price) + ")";
+	}
 	
+	/**
+	 * Returns true if two Book objects have the same ISBN
+	 */
+	@Override
+	public boolean equals(Object other) {
+		Book u = (Book) other;
+		if (this.ISBN.equals(u.getISBN())) {
+			return true;
+		}
+		return false;
+	}
 	
 	
 }
