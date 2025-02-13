@@ -11,6 +11,12 @@ public class LibraryApp {
 		Ellis_Library.addBook(book2);
 		Ellis_Library.addBook(book3);
 		
+		
+		String SearchingISBN = "9780330235648";
+		System.out.println("The book with ISBN: " + SearchingISBN + " is " 
+		+ Ellis_Library.searchByISBN(SearchingISBN).toString());
+		
+		
 	}
 
 }
